@@ -1,0 +1,8 @@
+#Conda
+   conda create -n pima  python=3.11
+   conda env list
+   conda activate pima
+   conda list -n pima
+   conda list -n pima | grep python 
+#pip 
+    pip install -r requirements.txt
