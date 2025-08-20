@@ -7,7 +7,7 @@ It also demonstrates building an end-to-end Machine Learning pipeline by trainin
 **Population Context**: The dataset was collected from the **Pima Indians**, a Native American tribe in Arizona, USA, who have one of the world’s highest rates of type 2 diabetes.
 
 
-# Data Preprocessing Stage 
+# Data Preprocessing Stage ( 5 steps)
 
 Data preprocessing is a crucial step in AI/ML pipelines because raw data is rarely ready for direct use in model training.  
 

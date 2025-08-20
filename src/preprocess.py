@@ -1,15 +1,22 @@
 # Data Preprocessing Stage
 import pandas as pd
-import sys
 import yaml
 import os
 
 #Read paramters from params.yaml
 
 def preprocess(inputPath,outputPath):
+    print("...Data Collection (step1)... ")
     data=pd.read_csv(inputPath)
     os.makedirs(os.path.dirname(outputPath),exist_ok=True)
-    #All preprocessing logic ...
+    
+    #All preprocessing logic here (if any)...
+    print("...Data Cleaning (step2)... ")
+    print("...Data Transformation (step3)... ")
+    print("...Data Integration(step4)... ")
+    print("...Data Reduction (step5)... ")
+    print(".. Data Splitting (step6)... ")
+    print(".. Data Preprocessing is done... ")
 
     #Finally write the processed file
     data.to_csv(outputPath,header=None,index=False)
