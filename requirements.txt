@@ -5,3 +5,4 @@ mlflow
 panda
 numpy
 dvc-s3
+mlflow<3

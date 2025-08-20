@@ -7,7 +7,7 @@ It also demonstrates building an end-to-end Machine Learning pipeline by trainin
 **Population Context**: The dataset was collected from the **Pima Indians**, a Native American tribe in Arizona, USA, who have one of the world’s highest rates of type 2 diabetes.
 
 
-# Data Preprocessing Stage ( 5 steps)
+# Data Preprocessing Stage ( 7 steps)
 
 Data preprocessing is a crucial step in AI/ML pipelines because raw data is rarely ready for direct use in model training.  
 
@@ -60,11 +60,20 @@ Data preprocessing is a crucial step in AI/ML pipelines because raw data is rare
 
 ---
 
+## 7. Other Steps
+- Remove headers in final file
+- Dont add index number
+
+---
 ## ✨ Summary
 The **Data Preprocessing Stage** ensures that data is:
 - Clean
 - Consistent
-- Structured  
+- Structured 
+-   Many ML libraries (like scikit-learn, TensorFlow, PyTorch) 
+    ssume that the input file only contains raw feature values without column names
+    By removing headers, you ensure the file format is uniform and directly consumable by the ML pipeline.
+- Dont add index . This avoids an extra column that could confuse the model.
 
 This makes it easier for AI/ML models to learn patterns effectively.  
 👉 Poor preprocessing = poor predictions, no matter how advanced the model is.

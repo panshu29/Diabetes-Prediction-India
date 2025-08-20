@@ -4,5 +4,6 @@
    conda activate pima
    conda list -n pima
    conda list -n pima | grep python 
+   conda list -n pima | grep mlflow
 #pip 
     pip install -r requirements.txt
