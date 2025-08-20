@@ -26,8 +26,8 @@ def preprocess(inputPath,outputPath):
 if __name__ == '__main__':
     print(f"** Data preprocessing started ! **")
     params=yaml.safe_load(open('../params.yaml'))
-    inputPath= "../"+params['preprocess']['input']
-    outputPath= "../"+params['preprocess']['output']
+    inputPath= params['preprocess']['input']
+    outputPath= params['preprocess']['output']
     preprocess(inputPath,outputPath)
     print("** Data Preprocessing is done ** ")
 
