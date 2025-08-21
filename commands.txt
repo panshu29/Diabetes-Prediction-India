@@ -7,3 +7,7 @@
    conda list -n pima | grep mlflow
 #pip 
     pip install -r requirements.txt
+
+
+#python
+   python --version
