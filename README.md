@@ -16,7 +16,7 @@ The **Data Preprocessing Stage** ensures that data is:
 - Consistent
 - Structured 
 
----
+
 
 ## 1. Data Collection
 - Gather raw data from multiple sources (databases, APIs, sensors, web scraping, files, etc.).
@@ -25,7 +25,7 @@ The **Data Preprocessing Stage** ensures that data is:
   - **Semi-structured** → JSON, XML
   - **Unstructured** → text, images, video
 
----
+
 
 ## 2. Data Cleaning
 - Handle **missing values** (imputation or removal).
@@ -33,7 +33,7 @@ The **Data Preprocessing Stage** ensures that data is:
 - Reduce **noise** (filter irrelevant entries).
 - Correct **errors** (typos, wrong labels, inconsistent values).
 
----
+
 
 ## 3. Data Transformation
 - **Normalization/Standardization** → scale features (Min-Max, Z-score).
@@ -41,20 +41,20 @@ The **Data Preprocessing Stage** ensures that data is:
 - **Feature extraction** → derive new features (e.g., "day of week" from timestamps).
 - **Feature engineering** → combine or transform features to improve model performance.
 
----
+
 
 ## 4. Data Integration
 - Merge datasets from different sources.
 - Align schemas and remove inconsistencies.
 
----
+
 
 ## 5. Data Reduction
 - **Dimensionality reduction** → PCA, t-SNE, UMAP.
 - **Feature selection** → keep only relevant features.
 - **Sampling** → handle class imbalance (oversampling/undersampling).
 
----
+
 
 ## 6. Data Splitting
 - Divide dataset into:
@@ -63,13 +63,13 @@ The **Data Preprocessing Stage** ensures that data is:
   - **Test set**
 - Prevents data leakage and ensures fair evaluation.
 
----
+
 
 ## 7. Other Steps
 - Remove headers in final file
 - Dont add index number
 
----
+
 ## ✨ Note 
 -   Many ML libraries (like scikit-learn, TensorFlow, PyTorch) 
     ssume that the input file only contains raw feature values without column names
@@ -81,4 +81,20 @@ This makes it easier for AI/ML models to learn patterns effectively.
  
  Logic mentioned in **./src/preprocess.py**
 
+---
 
+# Stage-2 Model Training and Experiment Tracking 
+
+Specifically, it includes:
+
+- **Data Splitting** – Dividing the dataset into training and testing sets.
+
+- **Hyperparameter Tuning** – Using `GridSearchCV` to find the best parameters for the Random Forest model.
+
+- **Model Training** – Fitting the best model on the training data.
+
+- **Model Evaluation** – Calculating metrics like accuracy, confusion matrix, and classification report.
+
+- **Experiment Tracking** – Logging parameters, metrics, and artifacts with MLflow.
+
+- **Model Persistence** – Saving the trained model locally for future inference.
