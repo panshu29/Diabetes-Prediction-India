@@ -11,3 +11,38 @@
 
 #python
    python --version
+
+#dvc 
+   dvc init
+   dvc add data/raw/diabetes.csv
+
+
+git rm -r --cached 'data/raw/diabetes.csv'
+git commit -m "stop tracking data/raw/diabetes.csv"
+git add data/raw/diabetes.csv.dvc data/raw/.gitignore
+git rm -r --cached 'models/model.pkl'
+git commit -m "stop tracking models/model.pkl" 
+
+
+dvc stage add --force -n preprocess \
+  -p preprocess.input,preprocess.output \
+  -d src/preprocess.py \
+  -d data/raw/diabetes.csv \
+  -o data/processd/diabetes.csv \
+  python src/preprocess.py
+
+dvc stage add --force -n training \
+  -p train.data_path,train.local_model_path,train.max_depth,train.n_estimators \
+  -d src/training.py \
+  -d data/processd/diabetes.csv \
+  -o models/model.pkl \
+  python src/training.py
+
+
+  dvc stage add --force -n evaluate \
+  -d src/evaluate.py \
+  -d models/model.pkl \
+  -d data/processd/diabetes.csv \
+  python src/evaluate.py
+
+  dvc repro

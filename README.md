@@ -98,3 +98,47 @@ Specifically, it includes:
 - **Experiment Tracking** – Logging parameters, metrics, and artifacts with MLflow.
 
 - **Model Persistence** – Saving the trained model locally for future inference.
+
+
+using DVC to tract Datamodel, model versions 
+
+The dvc stage add command creates a stage in your dvc.yaml pipeline.
+Here’s what each flag means in your command:
+
+-n preprocess → stage name = preprocess
+
+-p preprocess.input,preprocess.output → track parameters input and output from params.yaml (under the preprocess section)
+
+-d src/preprocess.py → dependency = script
+
+-d data/raw/diabetes.csv → dependency = raw data
+
+-o data/processed/diabetes.csv → output = processed data
+
+python src/preprocess.py → command to execute
+
+
+A new stage called preprocess gets added (or updated if it already exists) in your project’s dvc.yaml.
+
+That stage will include:
+
+The command to run (python src/preprocess.py)
+
+Dependencies (src/preprocess.py, data/raw/diabetes.csv)
+
+Outputs (data/processed/diabetes.csv)
+
+Parameters (preprocess.input, preprocess.output from params.yaml)
+
+So after running it, you’ll see a new section inside dvc.yaml.
+DVC starts tracking the declared dependencies (-d) and outputs (-o).
+
+If any of those dependencies change (file content, params, or code), DVC will know that the stage needs to re-run.
+
+Important: dvc stage add does not execute python src/preprocess.py right away.
+
+It just records the stage definition in dvc.yaml.
+
+preprocessing---> Traing --> Evaluation
+1. MLFlow Experimems
+2. DVC data versioning
