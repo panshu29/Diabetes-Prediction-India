@@ -1,4 +1,4 @@
-# Diabetes-Prediction-Pima-Indians  
+# Diabetes-Prediction-Pima-Indians  [Work in progress!....]
 
 This data science project focuses on predicting the likelihood of diabetes in individuals.  
 
